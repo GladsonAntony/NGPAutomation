@@ -42,7 +42,7 @@ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 ```
 > Clone Project
 ```sh
-$ git clone https://github.com/GladsonAntony/WebAutomation_AllureWDM.git
+$ git clone https://github.com/GladsonAntony/NGPAutomation.git
 ```
 > Run Test using Maven
 ```sh

@@ -16,13 +16,7 @@ This is a Selenium Hybrid Framework.
  - Mozilla Firefox
  - Google Chrome
  - Internet Explorer
- - Opera
  - Microsoft Edge
-
-### Headerless Support
- - HTMLUnit
- - Chrome Headless
- - Phantom JS
 
 ### Platform Support
  - Windows
@@ -31,12 +25,27 @@ This is a Selenium Hybrid Framework.
 
 ---
 ### Reporting
- - [Allure Reporting](http://allure.qatools.ru/)
+ - [Allure Reporting](https://docs.qameta.io/allure/)
  
 ---
 ### Usage
+
+#### Download Scoop
+
+>Make sure Powershell 3 (or later) and .NET Framework 4.5 (or later) are installed. Then run
+```sh
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+```
+> It asks for Yes or No. Select 'Y'
+```sh
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+```
+> Clone Project
 ```sh
 $ git clone https://github.com/GladsonAntony/WebAutomation_AllureWDM.git
+```
+> Run Test using Maven
+```sh
 $ mvn clean test
 ```
 ---
@@ -49,22 +58,14 @@ $ mvn clean test -DBrowserType=Chrome			#Chrome
 $ mvn clean test -DBrowserType=Chrome_Headless		#Chrome Headless
 $ mvn clean test -DBrowserType=Firefox			#Mozilla Firefox
 $ mvn clean test -DBrowserType=IE			#Internet Explorer
-$ mvn clean test -DBrowserType=Opera			#Opera Blink
 $ mvn clean test -DBrowserType=Edge			#Microsoft Edge
-$ mvn clean test -DBrowserType=Unit			#HTML Unit Headerless Browser
 ```
 ---
 ### Report Generation
 ```sh
-$ mvn site
+$ allure serve
 ```
-Navigate to /target/site/allure-maven-plugin.html
- - Supported Only on Mozilla Firefox
- 
-To Open Results in other Browsers do
-```sh
-$ mvn jetty:run -Djetty.http.port=9988
-```
+> It will generate the report and open the report in the default Browser
 ---
 
 ### @DataProviders

@@ -23,6 +23,7 @@ public class BrowserFactory extends InitMethod
 	static DesiredCapabilities capabilities;
 
 
+	@SuppressWarnings("deprecation")
 	static WebDriver createDriver() throws Exception
 	{
 
@@ -47,6 +48,7 @@ public class BrowserFactory extends InitMethod
 		case "internet explorer":
 			DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer(); 
 			ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+			driver=new InternetExplorerDriver(ieCapabilities);
 			break;	
 
 		case  "edge":
@@ -56,23 +58,20 @@ public class BrowserFactory extends InitMethod
 		default:
 			throw new NotFoundException("Browser Not Found. Please Provide a Valid Browser");
 		}
+		
 		if(ImplicitlyWait > 0)
 		{
 			implicitlywait(ImplicitlyWait);
-		}
+		}		
 
 		if(MaxPageLoadTime > 0)
 		{
 			setMaxPageLoadTime(MaxPageLoadTime);
 		}
 		driver.get(WebsiteURL);
-		if(!Browser.toLowerCase().contains("unit") || !Browser.toLowerCase().contains("ghost") || !Browser.toLowerCase().contains("phantom"))
-		{
-			driver.manage().window().maximize();
-		}
 		return driver;		
 	}
-
+	
 	public static void implicitlywait(int timeInSeconds) throws Exception
 	{
 		driver.manage().timeouts().implicitlyWait(timeInSeconds, TimeUnit.SECONDS);

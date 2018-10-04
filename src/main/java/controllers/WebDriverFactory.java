@@ -33,19 +33,19 @@ public class WebDriverFactory extends BrowserFactory
 		{
 		case "chrome":
 		case "chrome_headless":
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().arch64().setup();
 		
 		case  "firefox":
-			WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().arch64().setup();
 			break;
 
 		case  "ie":
 		case "internet explorer":
-			WebDriverManager.iedriver().setup();
+			WebDriverManager.iedriver().arch64().setup();
 			break;	
 
 		case  "edge":
-			WebDriverManager.edgedriver().setup();
+			WebDriverManager.edgedriver().arch64().setup();
 			break;
 
 		default:

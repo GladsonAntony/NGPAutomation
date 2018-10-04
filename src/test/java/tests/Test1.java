@@ -24,7 +24,7 @@ public class Test1 extends PageFactoryInitializer
 		.enterUserEmailID("TestUzumaki@outlook.com")
 		.clickOnNextButton()
 		.enterPassword("TestNaruto123")
-		.clickOnNextButton()
+		.clickOnSignIn()
 		.outlookAccountPage()
 		.verifyLogin("Naruto Uzumaki")
 		.logOut();

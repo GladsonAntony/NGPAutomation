@@ -68,6 +68,15 @@ public class BaseMethod extends WebDriverFactory
 		re.keyPress(KeyEvent.VK_DELETE);
 		re.keyRelease(KeyEvent.VK_DELETE);
 	}
+	
+	
+	/* To Press TAB Key using Robot */
+	public void hitTab() throws Exception 
+	{
+		re = new Robot();
+		re.keyPress(KeyEvent.VK_TAB);
+		re.keyRelease(KeyEvent.VK_TAB);
+	}
 
 
 	/* To Select all the Text/Web Elements using ROBOT */

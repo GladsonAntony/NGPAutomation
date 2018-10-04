@@ -5,15 +5,12 @@
  */
 package pageObjects.pages;
 
-import java.io.ObjectInputStream.GetField;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import io.qameta.allure.Step;
 import pageObjects.initializePageObjects.PageFactoryInitializer;
-import utils.ExplicitWaiting;
 
 public class OutlookSigninPageObjects extends PageFactoryInitializer
 {
@@ -37,8 +34,10 @@ public class OutlookSigninPageObjects extends PageFactoryInitializer
 	public OutlookSigninPageObjects enterUserEmailID(String emailId) throws Exception
 	{
 		Assert.assertTrue(field_Email.isDisplayed());
-		field_Email.clear();
-		field_Email.sendKeys(emailId);
+/*		field_Email.clear();
+		field_Email.sendKeys(emailId);*/
+		actionSendkeys(field_Email, emailId);
+		//JS_SendKeys(emailId, field_Email);
 		return this;
 	}
 	

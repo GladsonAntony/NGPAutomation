@@ -280,6 +280,12 @@ public class BaseMethod extends WebDriverFactory
 	{
 		((JavascriptExecutor) getWebDriver()).executeScript("return arguments[0].click();", element);
 	}
+	
+	/* To click a certain Web Element using DOM/ JavaScript Executor */
+	public void JS_SendKeys(String text,WebElement element) 
+	{
+		((JavascriptExecutor) getWebDriver()).executeScript("arguments[0].value='"+text+"';", element);
+	}
 
 
 	/* To Type at the specified location */
@@ -343,6 +349,14 @@ public class BaseMethod extends WebDriverFactory
 		ac = new Actions(getWebDriver());
 		ac.doubleClick(element);
 		ac.build().perform();
+	}
+	
+	
+	/*To Perform SendKeys using Action Class*/
+	public void actionSendkeys(WebElement element,String text)
+	{
+		ac = new Actions(getWebDriver());
+		ac.moveToElement(element).sendKeys(text).build().perform();
 	}
 
 
